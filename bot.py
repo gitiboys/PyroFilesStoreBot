@@ -100,17 +100,7 @@ async def start(bot, cmd):
             except UserNotParticipant:
                 await bot.send_message(
                     chat_id=cmd.from_user.id,
-                    text="**Please Join My Updates Channel to use this Bot!**\n\nDue to Overload, Only Channel Subscribers can use the Bot!",
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
-                            ],
-                            [
-                                InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
-                            ]
-                        ]
-                    ),
+                    text="`I'm no more alive 😕`",
                     parse_mode="markdown"
                 )
                 return
@@ -151,18 +141,7 @@ async def start(bot, cmd):
                 file_id = int(usr_cmd)
                 await bot.send_message(
                     chat_id=cmd.from_user.id,
-                    text="**Please Join My Updates Channel to use this Bot!**\n\nDue to Overload, Only Channel Subscribers can use the Bot!",
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
-                            ],
-                            [
-                                InlineKeyboardButton("🔄 Refresh / Try Again",
-                                                     url=f"https://t.me/{BOT_USERNAME}?start=rexona_{file_id}")
-                            ]
-                        ]
-                    ),
+                    text="`I'm no more alive 😕`",
                     parse_mode="markdown"
                 )
                 return
@@ -184,7 +163,7 @@ async def start(bot, cmd):
                 send_stored_file = await bot.forward_messages(chat_id=cmd.from_user.id, from_chat_id=DB_CHANNEL,
                                                               message_ids=file_id)
             await send_stored_file.reply_text(
-                f"**Here is Sharable Link of this file:** https://t.me/{BOT_USERNAME}?start=rexona_{file_id}\n\n__To Retrive the Stored File, just open the link!__",
+                f"**Here is Sharable Link of this file:** https://t.me/{BOT_USERNAME}?start=lux_{file_id}\n\n__To Retrive the Stored File, just open the link!__",
                 disable_web_page_preview=True, quote=True)
         except Exception as err:
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
@@ -208,17 +187,7 @@ async def main(bot, message):
             except UserNotParticipant:
                 await bot.send_message(
                     chat_id=message.from_user.id,
-                    text="**Please Join My Updates Channel to use this Bot!**\n\nDue to Overload, Only Channel Subscribers can use the Bot!",
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
-                            ],
-                            [
-                                InlineKeyboardButton("🔄 Refresh / Try Again", callback_data="refreshmeh")
-                            ]
-                        ]
-                    ),
+                    text="`I'm no more alive 😕`",
                     parse_mode="markdown"
                 )
                 return
@@ -244,7 +213,7 @@ async def main(bot, message):
             await forwarded_msg.reply_text(
                 f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!\n --`{message.from_user.id}`",
                 parse_mode="Markdown", disable_web_page_preview=True)
-            share_link = f"https://t.me/{BOT_USERNAME}?start=rexona_{file_er_id}"
+            share_link = f"https://t.me/{BOT_USERNAME}?start=lux_{file_er_id}"
             await editable.edit(
                 f"**Your File Stored in my Database!**\n\nHere is the Permanent Link of your file: {share_link} \n\nJust Click the link to get your file!",
                 parse_mode="Markdown",
@@ -278,7 +247,7 @@ async def main(bot, message):
         try:
             forwarded_msg = await message.forward(DB_CHANNEL)
             file_er_id = forwarded_msg.message_id
-            share_link = f"https://t.me/{BOT_USERNAME}?start=rexona_{file_er_id}"
+            share_link = f"https://t.me/{BOT_USERNAME}?start=lux_{file_er_id}"
             CH_edit = await bot.edit_message_reply_markup(message.chat.id, message.message_id,
                                                           reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
                                                               "Get Sharable Stored Link", url=share_link)]]))
@@ -515,16 +484,6 @@ async def button(bot, cmd: CallbackQuery):
             except UserNotParticipant:
                 await cmd.message.edit(
                     text="**You Still Didn't Join ☹️, Please Join My Updates Channel to use this Bot!**\n\nDue to Overload, Only Channel Subscribers can use the Bot!",
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
-                            ],
-                            [
-                                InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
-                            ]
-                        ]
-                    ),
                     parse_mode="markdown"
                 )
                 return

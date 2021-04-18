@@ -26,10 +26,6 @@ Send me any file 📂 I will save it in my Database. Also works for channel. Add
 📝 **Language:** [Python3](https://www.python.org)
 
 📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
-
-📡 **Hosted on:** [Knowwhere](https://www.google.com/search?q=knowwhere)
-
-🧑🏻‍💻 **Developer:** #R3X0N4
 """
 	ABOUT_DEV_TEXT = f"""
 🧑🏻‍💻 **Developer:** @AbirHasan2005
